@@ -86,6 +86,27 @@
         text-align: center;
       }
 
+      /* NAVBAR */
+      .navbar {
+        position: sticky;
+        top: 0;
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        z-index: 999;
+      }
+
+      .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+
       /* MÉTODO */
       .cards {
         display: grid;
@@ -171,6 +192,18 @@
         border-radius: 16px;
       }
 
+      /* ANIMACIONES */
+      .fade-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
       @media (max-width: 860px) {
         .about {
           grid-template-columns: 1fr;
@@ -183,17 +216,28 @@
     </style>
   </head>
   <body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">Álvaro Cobos</div>
+        <a class="cta" href="https://calendly.com/alvarocobos/da-el-primer-paso-hacia-tu-mejor-version">
+          Agendar llamada
+        </a>
+      </div>
+    </div>
+
     <main>
 
-      <!-- HERO -->
+      <!-- HERO OPTIMIZADO -->
       <section>
         <div class="container center">
           <h1>
-            Si tienes sobrepeso y estás cansado de empezar de cero,
-            <span class="highlight">esta puede ser tu transformación definitiva</span>
+            Álvaro Cobos<br>
+            <span class="highlight">Transformación física real</span>
           </h1>
           <p class="lead">
-            Coaching personal para perder grasa, recuperar energía y construir un físico del que vuelvas a sentirte orgulloso.
+            Especialista en ayudar a personas con sobrepeso a perder grasa, recuperar energía y volver a sentirse seguras con su cuerpo.
           </p>
           <a class="cta" href="https://calendly.com/alvarocobos/da-el-primer-paso-hacia-tu-mejor-version">
             QUIERO AGENDAR MI LLAMADA
@@ -201,7 +245,52 @@
         </div>
       </section>
 
-      <!-- MÉTODO -->
+      <!-- ESTO ES PARA TI -->
+      <section>
+        <div class="container">
+          <h2>Esto es para ti si…</h2>
+          <div class="cards">
+            <div class="card fade-item">
+              Te miras al espejo y no te gusta lo que ves.
+            </div>
+            <div class="card fade-item">
+              Has probado dietas y siempre vuelves al mismo punto.
+            </div>
+            <div class="card fade-item">
+              Te falta energía para tu día a día.
+            </div>
+            <div class="card fade-item">
+              Has sufrido efecto rebote después de perder peso.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESO -->
+      <section>
+        <div class="container">
+          <h2>Así funciona el proceso</h2>
+          <div class="cards">
+            <div class="card fade-item">
+              <div class="icon">🎓</div>
+              <h3>1. Ves la clase gratuita</h3>
+              <p>Entiendes el método y cómo funciona.</p>
+            </div>
+            <div class="card fade-item">
+              <div class="icon">📞</div>
+              <h3>2. Agendas una llamada</h3>
+              <p>Analizamos tu caso y tus objetivos.</p>
+            </div>
+            <div class="card fade-item">
+              <div class="icon">🔥</div>
+              <h3>3. Empieza tu transformación</h3>
+              <p>Con seguimiento real y plan personalizado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MÉTODO ORIGINAL -->
       <section>
         <div class="container">
           <h2>Cómo lo conseguimos</h2>
@@ -258,10 +347,6 @@
               <figure><img src="cambio4.jpg" /></figure>
             </div>
           </div>
-
-          <a class="cta" href="https://calendly.com/alvarocobos/da-el-primer-paso-hacia-tu-mejor-version">
-            QUIERO AGENDAR MI LLAMADA
-          </a>
         </div>
       </section>
 
@@ -288,8 +373,9 @@
 
     </main>
 
-    <!-- CONTADOR ANIMADO -->
+    <!-- SCRIPTS -->
     <script>
+      // CONTADOR
       const counters = document.querySelectorAll('.stat-number');
       let started = false;
 
@@ -326,12 +412,20 @@
         }
       });
 
-      window.addEventListener('load', () => {
-        if (isInViewport()) {
-          runCounters();
-          started = true;
-        }
-      });
+      // FADE-IN ELEMENTOS
+      const fadeItems = document.querySelectorAll('.fade-item');
+
+      function revealItems() {
+        fadeItems.forEach(item => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 50) {
+            item.classList.add('visible');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', revealItems);
+      window.addEventListener('load', revealItems);
     </script>
   </body>
 </html>
