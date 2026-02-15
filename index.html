@@ -163,6 +163,50 @@
       }
     </style>
   </head>
+  <script>
+  const counters = document.querySelectorAll('.stat-number');
+  let started = false;
+
+  function runCounters() {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
+      const increment = target / 80;
+
+      function updateCounter() {
+        count += increment;
+        if (count < target) {
+          counter.textContent = Math.floor(count);
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = target.toLocaleString('es-ES');
+        }
+      }
+
+      updateCounter();
+    });
+  }
+
+  function isInViewport() {
+    const section = document.querySelector('.stats');
+    const rect = section.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!started && isInViewport()) {
+      runCounters();
+      started = true;
+    }
+  });
+
+  window.addEventListener('load', () => {
+    if (isInViewport()) {
+      runCounters();
+      started = true;
+    }
+  });
+</script>
   <body>
     <main>
 
@@ -214,8 +258,22 @@
       <!-- RESULTADOS -->
       <section>
         <div class="container center">
-          <h2>Transformaciones reales</h2>
-          <div class="counter">+500 transformaciones</div>
+          <h2>Resultados reales</h2>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-number" data-target="500">0</div>
+    <div class="stat-label">personas transformadas</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number" data-target="12000">0</div>
+    <div class="stat-label">kg perdidos por clientes</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number" data-target="95">0</div>
+    <div class="stat-label">% terminan el programa</div>
+  </div>
+</div>
 
           <div class="slider">
             <div class="slider-track">
