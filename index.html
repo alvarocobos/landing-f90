@@ -107,7 +107,7 @@
         letter-spacing: 1px;
       }
 
-      /* MÉTODO */
+      /* CARDS */
       .cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -120,6 +120,10 @@
         border-radius: 14px;
         padding: 1.4rem;
         text-align: center;
+      }
+
+      .card-bordered {
+        border: 1px solid var(--accent);
       }
 
       .icon {
@@ -151,6 +155,21 @@
       .stat-label {
         font-size: 0.9rem;
         color: var(--text-soft);
+      }
+
+      /* VIDEO BOX */
+      .video-box {
+        width: 100%;
+        max-width: 720px;
+        aspect-ratio: 16/9;
+        background: #111;
+        border-radius: 16px;
+        margin: 2rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-soft);
+        border: 1px solid rgba(255,255,255,0.1);
       }
 
       /* SLIDER */
@@ -217,7 +236,6 @@
   </head>
   <body>
 
-    <!-- NAVBAR -->
     <div class="navbar">
       <div class="container nav-inner">
         <div class="brand">Álvaro Cobos</div>
@@ -229,19 +247,31 @@
 
     <main>
 
-      <!-- HERO OPTIMIZADO -->
+      <!-- HERO -->
       <section>
         <div class="container center">
           <h1>
             Álvaro Cobos<br>
-            <span class="highlight">Transformación física real</span>
+            <span class="highlight">
+              Pierde grasa y gana estética comiendo lo que te gusta y sin pasar hambre
+            </span>
           </h1>
           <p class="lead">
-            Especialista en ayudar a personas con sobrepeso a perder grasa, recuperar energía y volver a sentirse seguras con su cuerpo.
+            Programa diseñado para personas con sobrepeso que quieren transformar su físico sin dietas extremas.
           </p>
           <a class="cta" href="https://calendly.com/alvarocobos/da-el-primer-paso-hacia-tu-mejor-version">
             QUIERO AGENDAR MI LLAMADA
           </a>
+        </div>
+      </section>
+
+      <!-- CLASE GRATUITA -->
+      <section>
+        <div class="container center">
+          <h2>Clase gratuita</h2>
+          <div class="video-box">
+            Aquí irá tu clase gratuita
+          </div>
         </div>
       </section>
 
@@ -250,18 +280,10 @@
         <div class="container">
           <h2>Esto es para ti si…</h2>
           <div class="cards">
-            <div class="card fade-item">
-              Te miras al espejo y no te gusta lo que ves.
-            </div>
-            <div class="card fade-item">
-              Has probado dietas y siempre vuelves al mismo punto.
-            </div>
-            <div class="card fade-item">
-              Te falta energía para tu día a día.
-            </div>
-            <div class="card fade-item">
-              Has sufrido efecto rebote después de perder peso.
-            </div>
+            <div class="card card-bordered fade-item">Te miras al espejo y no te gusta lo que ves.</div>
+            <div class="card card-bordered fade-item">Has probado dietas y siempre vuelves al mismo punto.</div>
+            <div class="card card-bordered fade-item">Te falta energía para tu día a día.</div>
+            <div class="card card-bordered fade-item">Has sufrido efecto rebote después de perder peso.</div>
           </div>
         </div>
       </section>
@@ -271,49 +293,17 @@
         <div class="container">
           <h2>Así funciona el proceso</h2>
           <div class="cards">
-            <div class="card fade-item">
+            <div class="card card-bordered fade-item">
               <div class="icon">🎓</div>
               <h3>1. Ves la clase gratuita</h3>
-              <p>Entiendes el método y cómo funciona.</p>
             </div>
-            <div class="card fade-item">
+            <div class="card card-bordered fade-item">
               <div class="icon">📞</div>
               <h3>2. Agendas una llamada</h3>
-              <p>Analizamos tu caso y tus objetivos.</p>
             </div>
-            <div class="card fade-item">
+            <div class="card card-bordered fade-item">
               <div class="icon">🔥</div>
               <h3>3. Empieza tu transformación</h3>
-              <p>Con seguimiento real y plan personalizado.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- MÉTODO ORIGINAL -->
-      <section>
-        <div class="container">
-          <h2>Cómo lo conseguimos</h2>
-          <div class="cards">
-            <div class="card">
-              <div class="icon">🥗</div>
-              <h3>Alimentación</h3>
-              <p>Sin dietas extremas ni hambre constante.</p>
-            </div>
-            <div class="card">
-              <div class="icon">🏋️</div>
-              <h3>Entrenamiento</h3>
-              <p>Rutinas adaptadas a tu nivel real.</p>
-            </div>
-            <div class="card">
-              <div class="icon">📲</div>
-              <h3>Seguimiento</h3>
-              <p>Contacto directo y ajustes semanales.</p>
-            </div>
-            <div class="card">
-              <div class="icon">🧠</div>
-              <h3>Mentalidad</h3>
-              <p>Cambio de hábitos para resultados duraderos.</p>
             </div>
           </div>
         </div>
@@ -326,11 +316,11 @@
 
           <div class="stats">
             <div class="stat">
-              <div class="stat-number" data-target="500">0</div>
+              <div class="stat-number" data-target="+500">0</div>
               <div class="stat-label">personas transformadas</div>
             </div>
             <div class="stat">
-              <div class="stat-number" data-target="12000">0</div>
+              <div class="stat-number" data-target="+10000">0</div>
               <div class="stat-label">kg perdidos por clientes</div>
             </div>
             <div class="stat">
@@ -357,75 +347,18 @@
             <img src="alvaro.jpg" alt="Álvaro Cobos" />
           </div>
           <div>
-            <h2>Quién es Álvaro Cobos</h2>
-            <p>
-              Entrenador personal especializado en transformación física para personas que quieren perder grasa y recuperar confianza.
-            </p>
-            <p>
-              Su método se centra en crear hábitos sostenibles y resultados reales, sin soluciones extremas.
-            </p>
-            <a class="cta" href="https://calendly.com/alvarocobos/da-el-primer-paso-hacia-tu-mejor-version">
-              QUIERO AGENDAR MI LLAMADA
-            </a>
+            <h2>¿Quién es Álvaro Cobos?</h2>
+            <p>Soy Álvaro Cobos, entrenador personal, y sé lo que se siente empezar con ganas… y volver a abandonarlo.</p>
+            <p>Sé lo que es mirarte al espejo y saber que puedes dar más, pero no conseguir mantenerte constante.</p>
+            <p>Por eso creé mi método.</p>
+            <p>No es solo entrenamiento. Es estructura cuando te falta disciplina. Es dirección cuando estás perdido. Es acompañamiento cuando la motivación desaparece.</p>
+            <p>Trabajo contigo de forma personalizada, entendiendo tu punto de partida, tus bloqueos y tu realidad.</p>
+            <p>Mi único objetivo es ayudarte a salir del bucle y que tu vida dé un giro real.</p>
           </div>
         </div>
       </section>
 
     </main>
 
-    <!-- SCRIPTS -->
-    <script>
-      // CONTADOR
-      const counters = document.querySelectorAll('.stat-number');
-      let started = false;
-
-      function runCounters() {
-        counters.forEach(counter => {
-          const target = +counter.getAttribute('data-target');
-          let count = 0;
-          const increment = target / 80;
-
-          function updateCounter() {
-            count += increment;
-            if (count < target) {
-              counter.textContent = Math.floor(count);
-              requestAnimationFrame(updateCounter);
-            } else {
-              counter.textContent = target.toLocaleString('es-ES');
-            }
-          }
-
-          updateCounter();
-        });
-      }
-
-      function isInViewport() {
-        const section = document.querySelector('.stats');
-        const rect = section.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom > 0;
-      }
-
-      window.addEventListener('scroll', () => {
-        if (!started && isInViewport()) {
-          runCounters();
-          started = true;
-        }
-      });
-
-      // FADE-IN ELEMENTOS
-      const fadeItems = document.querySelectorAll('.fade-item');
-
-      function revealItems() {
-        fadeItems.forEach(item => {
-          const rect = item.getBoundingClientRect();
-          if (rect.top < window.innerHeight - 50) {
-            item.classList.add('visible');
-          }
-        });
-      }
-
-      window.addEventListener('scroll', revealItems);
-      window.addEventListener('load', revealItems);
-    </script>
   </body>
 </html>
