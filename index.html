@@ -21,9 +21,7 @@
         --max-width: 1100px;
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
 
       body {
         margin: 0;
@@ -37,13 +35,9 @@
         margin: 0 auto;
       }
 
-      section {
-        padding: 4rem 0;
-      }
+      section { padding: 4rem 0; }
 
-      h1,
-      h2,
-      h3 {
+      h1, h2, h3 {
         margin: 0 0 1rem;
         line-height: 1.1;
         text-align: center;
@@ -60,9 +54,7 @@
         font-weight: 800;
       }
 
-      .highlight {
-        color: var(--accent);
-      }
+      .highlight { color: var(--accent); }
 
       .lead {
         text-align: center;
@@ -82,11 +74,8 @@
         text-transform: uppercase;
       }
 
-      .center {
-        text-align: center;
-      }
+      .center { text-align: center; }
 
-      /* NAVBAR */
       .navbar {
         position: sticky;
         top: 0;
@@ -107,7 +96,6 @@
         letter-spacing: 1px;
       }
 
-      /* CARDS */
       .cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -131,7 +119,6 @@
         margin-bottom: 0.5rem;
       }
 
-      /* STATS */
       .stats {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -157,7 +144,6 @@
         color: var(--text-soft);
       }
 
-      /* VIDEO BOX */
       .video-box {
         width: 100%;
         max-width: 720px;
@@ -169,10 +155,8 @@
         align-items: center;
         justify-content: center;
         color: var(--text-soft);
-        border: 1px solid rgba(255,255,255,0.1);
       }
 
-      /* SLIDER */
       .slider {
         overflow-x: auto;
         padding: 1rem 0;
@@ -198,7 +182,6 @@
         object-fit: cover;
       }
 
-      /* ABOUT */
       .about {
         display: grid;
         gap: 2rem;
@@ -211,7 +194,6 @@
         border-radius: 16px;
       }
 
-      /* ANIMACIONES */
       .fade-item {
         opacity: 0;
         transform: translateY(20px);
@@ -224,19 +206,13 @@
       }
 
       @media (max-width: 860px) {
-        .about {
-          grid-template-columns: 1fr;
-        }
-
-        .slider figure {
-          min-width: 70%;
-        }
+        .about { grid-template-columns: 1fr; }
+        .slider figure { min-width: 70%; }
       }
     </style>
   </head>
   <body>
 
-    <!-- NAVBAR -->
     <div class="navbar">
       <div class="container nav-inner">
         <div class="brand">Álvaro Cobos</div>
@@ -248,7 +224,6 @@
 
     <main>
 
-      <!-- HERO -->
       <section>
         <div class="container center">
           <h1>
@@ -266,7 +241,6 @@
         </div>
       </section>
 
-      <!-- CLASE GRATUITA -->
       <section>
         <div class="container center">
           <h2>Clase gratuita</h2>
@@ -276,7 +250,6 @@
         </div>
       </section>
 
-      <!-- ESTO ES PARA TI -->
       <section>
         <div class="container">
           <h2>Esto es para ti si…</h2>
@@ -289,7 +262,6 @@
         </div>
       </section>
 
-      <!-- PROCESO -->
       <section>
         <div class="container">
           <h2>Así funciona el proceso</h2>
@@ -310,47 +282,17 @@
         </div>
       </section>
 
-      <!-- MÉTODO -->
-      <section>
-        <div class="container">
-          <h2>Cómo lo conseguimos</h2>
-          <div class="cards">
-            <div class="card card-bordered">
-              <div class="icon">🥗</div>
-              <h3>Alimentación</h3>
-              <p>Sin dietas extremas ni hambre constante.</p>
-            </div>
-            <div class="card card-bordered">
-              <div class="icon">🏋️</div>
-              <h3>Entrenamiento</h3>
-              <p>Rutinas adaptadas a tu nivel real.</p>
-            </div>
-            <div class="card card-bordered">
-              <div class="icon">📲</div>
-              <h3>Seguimiento</h3>
-              <p>Contacto directo y ajustes semanales.</p>
-            </div>
-            <div class="card card-bordered">
-              <div class="icon">🧠</div>
-              <h3>Mentalidad</h3>
-              <p>Cambio de hábitos para resultados duraderos.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- RESULTADOS -->
       <section>
         <div class="container center">
           <h2>Resultados reales</h2>
 
           <div class="stats">
             <div class="stat">
-              <div class="stat-number" data-target="500">+0</div>
+              <div class="stat-number" data-target="500">0</div>
               <div class="stat-label">personas transformadas</div>
             </div>
             <div class="stat">
-              <div class="stat-number" data-target="12000">+0</div>
+              <div class="stat-number" data-target="12000">0</div>
               <div class="stat-label">kg perdidos por clientes</div>
             </div>
             <div class="stat">
@@ -358,38 +300,69 @@
               <div class="stat-label">% terminan el programa</div>
             </div>
           </div>
-
-          <div class="slider">
-            <div class="slider-track">
-              <figure><img src="cambio1.jpg" /></figure>
-              <figure><img src="cambio2.jpg" /></figure>
-              <figure><img src="cambio3.jpg" /></figure>
-              <figure><img src="cambio4.jpg" /></figure>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section>
-        <div class="container about">
-          <div>
-            <img src="alvaro.jpg" alt="Álvaro Cobos" />
-          </div>
-          <div>
-            <h2>¿Quién es Álvaro Cobos?</h2>
-          
-            <p>Soy Álvaro Cobos, entrenador personal, y sé lo que se siente empezar con ganas… y volver a abandonarlo.</p>
-            <p>Sé lo que es mirarte al espejo y saber que puedes dar más, pero no conseguir mantenerte constante.</p>
-            <p>Por eso creé mi método.</p>
-            <p>No es solo entrenamiento. Es estructura cuando te falta disciplina. Es dirección cuando estás perdido. Es acompañamiento cuando la motivación desaparece.</p>
-            <p>Trabajo contigo de forma personalizada, entendiendo tu punto de partida, tus bloqueos y tu realidad.</p>
-            <p>Mi único objetivo es ayudarte a salir del bucle y que tu vida dé un giro real.</p>
-          </div>
         </div>
       </section>
 
     </main>
+
+    <script>
+      const counters = document.querySelectorAll('.stat-number');
+      let started = false;
+
+      function runCounters() {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          let count = 0;
+          const increment = target / 80;
+
+          function updateCounter() {
+            count += increment;
+            if (count < target) {
+              counter.textContent = "+" + Math.floor(count).toLocaleString('es-ES');
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = "+" + target.toLocaleString('es-ES');
+            }
+          }
+
+          updateCounter();
+        });
+      }
+
+      function isInViewport() {
+        const section = document.querySelector('.stats');
+        const rect = section.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!started && isInViewport()) {
+          runCounters();
+          started = true;
+        }
+      });
+
+      window.addEventListener('load', () => {
+        if (isInViewport()) {
+          runCounters();
+          started = true;
+        }
+      });
+
+      const fadeItems = document.querySelectorAll('.fade-item');
+
+      function revealItems() {
+        fadeItems.forEach(item => {
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 50) {
+            item.classList.add('visible');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', revealItems);
+      window.addEventListener('load', revealItems);
+    </script>
 
   </body>
 </html>
