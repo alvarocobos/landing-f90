@@ -57,22 +57,40 @@
       .progress {
         width: 100%;
         max-width: 500px;
-        height: 6px;
+        height: 8px;
         background: #222;
         margin: 2rem auto;
         border-radius: 999px;
         overflow: hidden;
+        position: relative;
       }
 
       .progress-bar {
         height: 100%;
         width: 0%;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        animation: load 2s ease forwards;
+        position: relative;
+        background: linear-gradient(
+          90deg,
+          #ff3c00,
+          #ff6b00,
+          #ff8a33,
+          #ff3c00
+        );
+        background-size: 200% 100%;
+        animation:
+          load 2s ease forwards,
+          fire 1s linear infinite;
       }
 
+      /* Animación hasta 90% */
       @keyframes load {
-        to { width: 100%; }
+        to { width: 90%; }
+      }
+
+      /* Movimiento tipo fuego */
+      @keyframes fire {
+        from { background-position: 0% 0%; }
+        to { background-position: 200% 0%; }
       }
 
       /* Calendly */
@@ -132,7 +150,7 @@
         href="https://wa.me/34633164871"
         target="_blank"
       >
-        Toca aquí y hablamos por WhatsApp
+        Toca aquí y agendamos por WhatsApp
       </a>
     </div>
   </body>
