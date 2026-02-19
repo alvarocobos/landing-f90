@@ -1,0 +1,241 @@
+:root {
+  --bg: #0a0c10;
+  --surface: #121722;
+  --surface-2: #181f2e;
+  --text: #f2f5ff;
+  --muted: #a6b0c4;
+  --accent: #6d7cff;
+  --accent-2: #3fe2ff;
+  --error: #ff6f7d;
+  --success: #54d68d;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(109, 124, 255, 0.18), transparent 35%),
+    radial-gradient(circle at 90% 5%, rgba(63, 226, 255, 0.16), transparent 30%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+.page {
+  width: min(920px, 92%);
+  margin: 0 auto;
+  padding: 42px 0 56px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(109, 124, 255, 0.16);
+  border: 1px solid rgba(109, 124, 255, 0.4);
+  color: #bfc7ff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  margin: 0 0 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4.6vw, 3rem);
+}
+
+.hero-subtitle {
+  margin: 14px auto 0;
+  color: var(--muted);
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+.calculator-card {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3.6vw, 32px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+input,
+select,
+button {
+  border: none;
+  border-radius: 12px;
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 13px 14px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(109, 124, 255, 0.85);
+  box-shadow: 0 0 0 3px rgba(109, 124, 255, 0.2);
+}
+
+.goal-adjust {
+  margin: 2px 0 2px;
+  padding: 12px;
+  background: rgba(109, 124, 255, 0.1);
+  border: 1px solid rgba(109, 124, 255, 0.3);
+  border-radius: 12px;
+}
+
+button {
+  width: 100%;
+  margin-top: 6px;
+  padding: 14px 18px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 10px 20px rgba(63, 226, 255, 0.2);
+}
+
+.error {
+  min-height: 20px;
+  margin: 10px 0 0;
+  color: var(--error);
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.lead-gate {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.results {
+  margin-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.result-grid article {
+  background: var(--surface-2);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.result-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.result-value {
+  margin: 6px 0 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.macro-bars {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar-track {
+  height: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar {
+  width: 0;
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.protein {
+  background: linear-gradient(90deg, #54d68d, #86efac);
+}
+
+.fat {
+  background: linear-gradient(90deg, #ffbf5f, #ffd37d);
+}
+
+.carb {
+  background: linear-gradient(90deg, #6d7cff, #96a3ff);
+}
+
+@media (max-width: 700px) {
+  .grid,
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bar-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
