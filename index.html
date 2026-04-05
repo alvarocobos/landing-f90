@@ -232,7 +232,61 @@
   margin-bottom: 1rem;
   color: var(--text-soft);
 }
+/* SECCIÓN PREMIUM */
+.metodo-premium {
+  position: relative;
+  background: url('alvaro.jpg') center/cover no-repeat;
+  padding: 5rem 0;
+  overflow: hidden;
+}
 
+.metodo-premium .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+}
+
+.metodo-premium .content {
+  position: relative;
+  z-index: 2;
+}
+
+.metodo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.metodo-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,107,0,0.3);
+  border-radius: 16px;
+  padding: 1.8rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.metodo-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(255,107,0,0.2);
+}
+
+.metodo-card h3 {
+  margin-top: 0.5rem;
+}
+
+.metodo-card p {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.metodo-card .icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
     </style>
   </head>
   <body>
@@ -324,6 +378,42 @@
             </div>
           </div>
         </div>
+        <!-- COMO LO CONSEGUIMOS PREMIUM -->
+<section class="metodo-premium">
+  <div class="overlay"></div>
+
+  <div class="container center content">
+    <h2>Cómo lo conseguimos</h2>
+
+    <div class="metodo-grid">
+
+      <div class="metodo-card">
+        <div class="icon">🥗</div>
+        <h3>Alimentación</h3>
+        <p>Sin dietas extremas ni hambre constante.</p>
+      </div>
+
+      <div class="metodo-card">
+        <div class="icon">🏋️</div>
+        <h3>Entrenamiento</h3>
+        <p>Rutinas adaptadas a tu nivel real.</p>
+      </div>
+
+      <div class="metodo-card">
+        <div class="icon">📞</div>
+        <h3>Seguimiento</h3>
+        <p>Contacto directo y ajustes semanales.</p>
+      </div>
+
+      <div class="metodo-card">
+        <div class="icon">🧠</div>
+        <h3>Mentalidad</h3>
+        <p>Cambio de hábitos para resultados duraderos.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
       </section>
 <!-- TRANSFORMACIONES -->
 <section>
