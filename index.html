@@ -99,17 +99,25 @@
       .cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
+        gap: 1.5rem;
         margin-top: 2rem;
       }
 
       .card {
-        background: var(--card);
-        border-radius: 14px;
-        padding: 1.4rem;
-        text-align: center;
-      }
-
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,107,0,0.25);
+  border-radius: 18px;
+  padding: 1.6rem;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+      .card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(255,107,0,0.2);
+}
       .card-bordered {
         border: 1px solid var(--accent);
       }
@@ -320,8 +328,8 @@
       </section>
 
     
-      <section>
-        <div class="container">
+<section style="background: linear-gradient(180deg, #0b0b0d, #111114);">
+  <div class="container">
           <h2>Esto es para ti si…</h2>
           <div class="cards">
             <div class="card card-bordered fade-item">Te miras al espejo y no te gusta lo que ves.</div>
