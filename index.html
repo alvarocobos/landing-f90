@@ -112,17 +112,23 @@
   backdrop-filter: blur(6px);
   transition: all 0.3s ease;
   font-size: 0.95rem;
+
+  box-shadow: 
+    0 0 0 1px rgba(255,107,0,0.15),
+    0 8px 30px rgba(0,0,0,0.4);
 }
       .card:hover {
   transform: translateY(-6px);
   border-color: var(--accent) !important;
   box-shadow: 0 10px 30px rgba(255,107,0,0.2);
 }
-      .card-bordered {
-        border: 1px solid var(--accent);
-      }
-
-      .icon {
+      .card:active {
+  transform: scale(0.97);
+  box-shadow: 
+    0 0 0 1px rgba(255,107,0,0.3),
+    0 4px 15px rgba(0,0,0,0.6);
+}
+     .icon {
         font-size: 1.6rem;
         margin-bottom: 0.5rem;
       }
